@@ -1,32 +1,65 @@
 document.addEventListener("DOMContentLoaded", function() {
+    // Form Validation
     const form = document.getElementById("contactForm");
     const successMessage = document.getElementById("mensajeExito");
     const errorMessage = document.getElementById("mensajeError");
 
-    form.addEventListener("submit", function(event) {
-        event.preventDefault();
+    if (form) {
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
 
-        // Validación de campos
-        const nombre = form.nombre.value.trim();
-        const email = form.email.value.trim();
-        const mensaje = form.mensaje.value.trim();
+            // Validación de campos
+            const nombre = form.nombre.value.trim();
+            const email = form.email.value.trim();
+            const mensaje = form.mensaje.value.trim();
 
-        if (nombre === "" || email === "" || mensaje === "") {
-            errorMessage.style.display = "block";
-            return;
+            if (nombre === "" || email === "" || mensaje === "") {
+                errorMessage.style.display = "block";
+                successMessage.style.display = "none";
+                return;
+            }
+
+            // Validación de formato de email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                errorMessage.style.display = "block";
+                successMessage.style.display = "none";
+                return;
+            }
+
+            // Si pasa todas las validaciones, mostrar mensaje de éxito
+            successMessage.style.display = "block";
+            errorMessage.style.display = "none";
+
+            // Aquí podrías enviar los datos del formulario a través de AJAX si deseas
+        });
+    }
+
+    // Carousel Functionality
+    const carouselContainer = document.querySelector('.carousel');
+    if (carouselContainer) {
+        const slides = carouselContainer.querySelectorAll('.slide');
+        const prevButton = document.querySelector('.carousel-prev');
+        const nextButton = document.querySelector('.carousel-next');
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.display = (i === index) ? 'block' : 'none';
+                slide.style.opacity = (i === index) ? 1 : 0;
+            });
         }
 
-        // Validación de formato de email
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            errorMessage.style.display = "block";
-            return;
-        }
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : slides.length - 1;
+            showSlide(currentIndex);
+        });
 
-        // Si pasa todas las validaciones, mostrar mensaje de éxito
-        successMessage.style.display = "block";
-        errorMessage.style.display = "none";
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex < slides.length - 1) ? currentIndex + 1 : 0;
+            showSlide(currentIndex);
+        });
 
-        // Aquí podrías enviar los datos del formulario a través de AJAX si deseas
-    });
+        showSlide(currentIndex); // Initialize the carousel
+    }
 });

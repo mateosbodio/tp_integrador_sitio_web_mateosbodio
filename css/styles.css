@@ -1,100 +1,165 @@
-/* Estilos para el header */
+/* General Styles */
 
-header {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
+html,
+body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
 }
 
-header h1 {
-    margin: 0;
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 1rem;
+    text-align: center;
 }
 
 nav ul {
     list-style-type: none;
     padding: 0;
+    margin: 0;
 }
 
 nav ul li {
     display: inline;
-    margin-right: 20px;
+    margin: 0 15px;
 }
 
 nav ul li a {
-    color: #fff;
+    color: #ecf0f1;
     text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
 }
 
-
-/* Estilos para el main */
+nav ul li a:hover {
+    color: #3498db;
+}
 
 main {
-    padding: 20px;
+    flex: 1;
+    /* This allows the main content to expand and push the footer down */
+    padding: 2rem;
 }
 
-
-/* Estilos para el footer */
-
-footer {
-    background-color: #f8f9fa;
-    padding: 10px 0;
-    text-align: center;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+section {
+    margin-bottom: 2rem;
 }
 
-
-/* Estilos para el formulario de contacto */
-
-form {
-    max-width: 500px;
-    margin: 0 auto;
+h2 {
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: #2980b9;
 }
 
-label {
-    display: block;
-    margin-bottom: 5px;
+ul {
+    list-style-type: none;
+    padding: 0;
 }
 
-input[type="text"],
-input[type="email"],
-textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
+.promotions li,
+.featured-destinations li {
+    background-color: #ecf0f1;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.promotions li:hover,
+.featured-destinations li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.featured-destinations li img {
+    max-width: 100%;
+    height: auto;
     border-radius: 5px;
 }
 
-button {
-    padding: 10px 20px;
-    background-color: #007bff;
+.featured-destinations li a {
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    margin-top: 0.5rem;
+    color: #2980b9;
+}
+
+.featured-destinations li a:hover {
+    color: #3498db;
+}
+
+
+/* Carousel Styles */
+
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.slide {
+    display: none;
+    text-align: center;
+    transition: opacity 0.5s;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    border-bottom: 2px solid #3498db;
+}
+
+.carousel-prev,
+.carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
     color: #fff;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-#mensajeExito,
-#mensajeError {
-    margin-top: 10px;
     padding: 10px;
-    border-radius: 5px;
-    display: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-#mensajeExito {
-    background-color: #d4edda;
-    color: #155724;
+.carousel-prev:hover,
+.carousel-next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
-#mensajeError {
-    background-color: #f8d7da;
-    color: #721c24;
+.carousel-prev {
+    left: 10px;
+}
+
+.carousel-next {
+    right: 10px;
+}
+
+
+/* Footer Styles */
+
+footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+    /* Push the footer to the bottom of the page */
 }
