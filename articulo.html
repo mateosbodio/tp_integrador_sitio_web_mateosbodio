@@ -4,12 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Empresa de Turismo - Artículo</title>
+    <title>Empresa de Turismo - Inicio</title>
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/main.js" defer></script>
 </head>
 
 <body>
+    <!-- Menú flotante -->
+    <div class="floating-menu">
+        <a href="index.html">Inicio</a>
+        <a href="articulo.html">Artículo</a>
+        <a href="contacto.html">Contacto</a>
+    </div>
     <header>
         <h1>Empresa de Turismo</h1>
         <nav>
@@ -21,11 +27,60 @@
         </nav>
     </header>
     <main>
-        <article>
-            <h2>Descubre Nuestro Destino Exótico</h2>
-            <p>Información detallada sobre el destino turístico...</p>
-        </article>
-        <a href="index.html">Volver a la página principal</a>
+        <section>
+            <h2>Destinos Destacados</h2>
+            <ul class="featured-destinations">
+                <li>
+                    <section id="d1">
+                        <img src="img/destino1.jpg" alt="Destino 1">
+                        <h3>Cataratas del Iguazú Brasil.</h3>
+                        <p>Explora las Cataratas del Iguazú y disfruta de sus senderos.</p>
+                        <a href="https://es.wikipedia.org/wiki/Cataratas_del_Iguaz%C3%BA">Más información</a>
+                    </section>
+                </li>
+                <li>
+                    <section id="d2">
+                        <img src="img/destino2.jpg" alt="Destino 2">
+                        <h3>Bariloche Argentina.</h3>
+                        <p>Descubre la fascinante ciudad ubicada en el parque nacional Nahuel Huapi, en el suroeste de la provincia de Neuquen, junto a la cordillera de los Andes. </p>
+                        <a href="https://es.wikipedia.org/wiki/San_Carlos_de_Bariloche">Más información</a>
+                    </section>
+                </li>
+                <li>
+                    <section id="d3">
+                        <img src="img/destino3.jpg" alt="Destino 3">
+                        <h3>Ushuaia Argentina.</h3>
+                        <p>Visita la histórica ciudad de Ushuaia y maravíllate con sus tipicas casas, museos maritimos y sus increibles vistas panoramicas.</p>
+                        <a href="https://es.wikipedia.org/wiki/Ushuaia">Más información</a>
+                    </section>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <h2>Destinos</h2>
+            <div class="carousel">
+                <button class="carousel-prev">Anterior</button>
+                <div class="slide">
+                    <img src=" img/destino1.jpg " alt="Destino 1 ">
+                    <h3>Cataratas del Iguazú Brasil.</h3>
+                    <p>Explora las Cataratas del Iguazú y disfruta de sus senderos.</p>
+                    <a href="https://es.wikipedia.org/wiki/Cataratas_del_Iguaz%C3%BA ">Más información</a>
+                </div>
+                <div class="slide " style="display:none; ">
+                    <img src="img/destino2.jpg " alt="Destino 2 ">
+                    <h3>Bariloche Argentina.</h3>
+                    <p>Descubre la fascinante ciudad ubicada en el parque nacional Nahuel Huapi, en el suroeste de la provincia de Neuquen, junto a la cordillera de los Andes. </p>
+                    <a href="https://es.wikipedia.org/wiki/San_Carlos_de_Bariloche ">Más información</a>
+                </div>
+                <div class="slide " style="display:none; ">
+                    <img src="img/destino3.jpg " alt="Destino 3 ">
+                    <h3>Ushuaia Argentina.</h3>
+                    <p>Visita la histórica ciudad de Ushuaia y maravíllate con sus tipicas casas, museos maritimos y sus increibles vistas panoramicas.</p>
+                    <a href="https://es.wikipedia.org/wiki/Ushuaia ">Más información</a>
+                </div>
+                <button class="carousel-next ">Siguiente</button>
+            </div>
+        </section>
     </main>
     <footer>
         <p>&copy; 2024 Empresa de Turismo. Todos los derechos reservados.</p>

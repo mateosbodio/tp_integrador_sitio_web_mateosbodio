@@ -63,3 +63,26 @@ document.addEventListener("DOMContentLoaded", function() {
         showSlide(currentIndex); // Initialize the carousel
     }
 });
+// Variables globales para el carrito
+let cart = [];
+
+// Función para agregar un elemento al carrito
+function addToCart(name, description, price) {
+    cart.push({ name, description, price });
+    renderCart();
+}
+
+// Función para renderizar los elementos del carrito
+function renderCart() {
+    const cartContainer = document.getElementById('cart-items');
+    cartContainer.innerHTML = '';
+    cart.forEach(item => {
+                const cartItemDiv = document.createElement('div');
+                cartItemDiv.classList.add('cart-item');
+
+                const itemInfo = document.createElement('div');
+                itemInfo.classList.add('cart-item-info');
+
+                const itemName = document.createElement('h4');
+                itemName.textContent = item.name;
+                itemInfo.appendChild(itemName);
